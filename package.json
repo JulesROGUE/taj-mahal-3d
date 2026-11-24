@@ -1,0 +1,73 @@
+{
+  "name": "taj-mahal-3d",
+  "productName": "Taj Mahal 3D",
+  "version": "1.0.0",
+  "description": "Le Taj Mahal reproduit en 3D avec Three.js, uniquement en code : coupole, minarets, jardin moghol et bassin, de jour comme de nuit.",
+  "author": {
+    "name": "Jules ROGUE",
+    "email": "48066129+JulesROGUE@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/JulesROGUE/taj-mahal-3d",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "vite build && electron .",
+    "dist": "vite build && electron-builder",
+    "dist:win": "vite build && electron-builder --win",
+    "dist:linux": "vite build && electron-builder --linux"
+  },
+  "dependencies": {
+    "@fontsource/roboto": "5.3.0",
+    "material-symbols": "0.48.2",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "6.1.2",
+    "electron": "45.2.1",
+    "electron-builder": "26.18.1",
+    "vite": "8.3.5"
+  },
+  "build": {
+    "appId": "com.julesrogue.tajmahal3d",
+    "productName": "Taj Mahal 3D",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "icon": "build/icon.png",
+    "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-portable.${ext}"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Graphics",
+      "maintainer": "Jules ROGUE <48066129+JulesROGUE@users.noreply.github.com>"
+    },
+    "publish": null
+  }
+}
