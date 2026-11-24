@@ -20,7 +20,7 @@ Tourner autour, zoomer, changer de point de vue, passer du jour à la nuit.</p>
 
 Le défi : reproduire le Taj Mahal **sans aucun modèle 3D ni texture téléchargés**. Tout est construit en JavaScript avec des géométries Three.js (extrusions percées d'arcs, `LatheGeometry` pour les bulbes, cylindres, tores…) et des textures dessinées dans des `canvas` (marbre, bandes calligraphiques stylisées, fleurs de pietra dura, grès rouge, plan du jardin).
 
-Le projet a été réalisé **avec l'aide de l'IA**, en calant le modèle sur des **images de référence réelles** (photos, coupe et plans de Wikimedia Commons) et sur les dimensions publiées : socle de 95,5 m, mausolée de 57,3 m aux angles chanfreinés, coupole de 23 m sur un tambour de 12 m, épi de 9,6 m, 73 m de hauteur totale, minarets de 40 m à trois balcons. Le résultat est une reproduction **stylisée**, pas un relevé d'architecte.
+Le projet a été réalisé **avec l'aide de l'IA**, en calant le modèle sur des **images de référence réelles** (photos, coupe et plans de Wikimedia Commons) et sur les dimensions publiées : socle de 95,5 m, mausolée de 57,3 m aux angles chanfreinés, coupole de 23 m sur un tambour de 12 m, épi de 9,6 m, 73 m de hauteur totale, minarets de plus de 40 m à trois balcons. Le résultat est une reproduction **stylisée**, pas un relevé d'architecte.
 
 ## Aperçu
 
@@ -73,7 +73,7 @@ Les images ci-dessous ont servi à **mesurer et comparer** (proportions, nombre 
 | Grande porte | Façades percées d'arcs, 2 × 11 petits chhatris, 4 tours d'angle | 41 × 34 m, 23 m |
 | Contexte | Terrasse de grès, mur de quai, Yamuna, arbres, ciel en dégradé, lune et étoiles | — |
 
-Les pièces sont regroupées par matériau avec `mergeGeometries` : une quarantaine de draw calls pour toute la scène. Le rendu se fait **à la demande** (au chargement, quand la caméra bouge et pendant les transitions), sans boucle permanente.
+Les pièces sont regroupées par matériau avec `mergeGeometries` : une trentaine de meshes (un par matériau) pour toute la scène. Le rendu se fait **à la demande** (au chargement, quand la caméra bouge et pendant les transitions), sans boucle permanente.
 
 ## Commandes
 
@@ -92,12 +92,12 @@ Les points de vue s'ouvrent aussi par l'adresse : `#facade`, `#aerien`, `#coupol
 
 Téléchargez la dernière version sur la page [Releases](https://github.com/JulesROGUE/taj-mahal-3d/releases/latest).
 
-**Windows** : téléchargez l'exécutable portable `…-portable.exe` et lancez-le directement, sans installation.
+**Windows** : téléchargez l'exécutable portable `Taj.Mahal.3D-1.0.0-portable.exe` et lancez-le directement, sans installation.
 > L'exécutable n'est pas signé : Windows SmartScreen peut afficher « Windows a protégé votre ordinateur ». Cliquez sur **Informations complémentaires** puis **Exécuter quand même**.
 
 **Linux** :
-- **AppImage** : `chmod +x Taj.Mahal.3D-*.AppImage` puis lancez le fichier ;
-- **.deb** (Debian, Ubuntu…) : `sudo apt install ./Taj.Mahal.3D-*-linux-amd64.deb`.
+- **AppImage** : `chmod +x Taj.Mahal.3D-1.0.0-linux-x86_64.AppImage` puis lancez le fichier ;
+- **.deb** (Debian, Ubuntu…) : `sudo apt install ./Taj.Mahal.3D-1.0.0-linux-amd64.deb`.
 
 ## Développement
 
